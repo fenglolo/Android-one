@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,6 +34,22 @@ public class FruitWaterAdapter extends RecyclerView.Adapter<FruitWaterAdapter.Vi
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_fruit_water, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
+        viewHolder.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position = viewHolder.getAdapterPosition();
+                Fruit fruit = list.get(position);
+                Toast.makeText(v.getContext(), "点击item-->" + fruit.getFruitName(), Toast.LENGTH_SHORT).show();
+            }
+        });
+        viewHolder.fruitImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position = viewHolder.getAdapterPosition();
+                Fruit fruit = list.get(position);
+                Toast.makeText(v.getContext(), "点击img-->" + fruit.getFruitResource(), Toast.LENGTH_SHORT).show();
+            }
+        });
         return viewHolder;
     }
 
@@ -50,11 +67,13 @@ public class FruitWaterAdapter extends RecyclerView.Adapter<FruitWaterAdapter.Vi
 
     static class ViewHolder extends RecyclerView.ViewHolder {
 
+        View view;
         ImageView fruitImg;
         TextView fruitText;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            view = itemView;
             fruitImg = itemView.findViewById(R.id.fruit_image);
             fruitText = itemView.findViewById(R.id.fruit_text);
         }
