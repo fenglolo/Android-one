@@ -17,9 +17,12 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".activity.SelectActivity" />
+
         <activity android:name=".activity.recycler.RecyclerActivity" />
         <activity android:name=".activity.recycler.RecyclerTestActivity" />
 
+        <activity android:name=".activity.fragment.FragmentTest1Activity" />
     </application>
 
 </manifest>

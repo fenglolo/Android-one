@@ -1,18 +1,18 @@
 package com.fw.androidone;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.view.View;
-import android.widget.Button;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
-import com.fw.androidone.activity.recycler.RecyclerActivity;
-import com.fw.androidone.activity.recycler.RecyclerTestActivity;
+import com.fw.androidone.activity.SelectActivity;
 import com.fw.androidone.base.activity.BaseActivity;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity {
 
-    private Button btn_recycler;
-    private Button btn_recycler_text;
+    private ListView listView;
+    private String[] data;
 
     @Override
     protected int getContentLayout() {
@@ -21,28 +21,29 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void initView() {
-        btn_recycler = findViewById(R.id.btn_recycler);
-        btn_recycler_text = findViewById(R.id.btn_recycler_text);
+        listView = findViewById(R.id.lv_main);
     }
 
     @Override
     protected void initAction() {
-        btn_recycler.setOnClickListener(this);
-        btn_recycler_text.setOnClickListener(this::onClick);
+        init();
     }
 
     @Override
     protected void initData() {
-
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, data);
+        listView.setAdapter(arrayAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(MainActivity.this, SelectActivity.class);
+                intent.putExtra("type", position + 1);
+                startActivity(intent);
+            }
+        });
     }
 
-    @SuppressLint("NonConstantResourceId")
-    @Override
-    public void onClick(View v) {
-        if (v.getId() == R.id.btn_recycler) {
-            startActivity(new Intent(this, RecyclerActivity.class));
-        } else if (v.getId() == R.id.btn_recycler_text) {
-            startActivity(new Intent(this, RecyclerTestActivity.class));
-        }
+    private void init() {
+        data = new String[]{"UI开发", "Fragment", "全剧大喇叭-广播"};
     }
 }
