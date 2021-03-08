@@ -53,6 +53,7 @@ public class FragmentTest1Activity extends BaseActivity implements View.OnClickL
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
         transaction.replace(R.id.fl_layout, fragment);
+//        transaction.addToBackStack(null);//设置返回栈
         transaction.commit();
     }
 }
