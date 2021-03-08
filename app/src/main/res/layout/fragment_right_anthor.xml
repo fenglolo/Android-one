@@ -2,13 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/purple_200"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_fragment"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="点击切换fragment" />
+        android:text="this is an 另一个 right text "
+        android:textSize="20dp" />
 
 </LinearLayout>
