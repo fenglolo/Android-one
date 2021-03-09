@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.fw.androidone.R;
 import com.fw.androidone.activity.fragment.FragmentTest1Activity;
+import com.fw.androidone.activity.fragment.NewsActivity;
 import com.fw.androidone.activity.recycler.RecyclerActivity;
 import com.fw.androidone.activity.recycler.RecyclerTestActivity;
 import com.fw.androidone.adapter.SelectAdapter;
@@ -54,7 +55,7 @@ public class SelectActivity extends BaseActivity {
 
     @Override
     protected void initData() {
-        manager = new LinearLayoutManager(this);
+        manager = new LinearLayoutManager(SelectActivity.this);
         recyclerView.setLayoutManager(manager);
         adapter = new SelectAdapter(list);
         recyclerView.setAdapter(adapter);
@@ -78,5 +79,7 @@ public class SelectActivity extends BaseActivity {
     private void init2() {
         Select select = new Select("Fragment", "碎片的简单使用", new FragmentTest1Activity());
         list.add(select);
+        Select select2 = new Select("Fragment", "实战：一个简易版的新闻应用", new NewsActivity());
+        list.add(select2);
     }
 }

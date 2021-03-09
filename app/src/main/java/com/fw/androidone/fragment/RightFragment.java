@@ -1,5 +1,6 @@
 package com.fw.androidone.fragment;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.fw.androidone.R;
+import com.fw.androidone.activity.fragment.FragmentTest1Activity;
 
 /**
  * description :
@@ -51,6 +53,7 @@ public class RightFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
+        FragmentTest1Activity activity = (FragmentTest1Activity) getActivity();
         Log.d(TAG, "--onStart");
     }
 

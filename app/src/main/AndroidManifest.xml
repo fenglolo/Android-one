@@ -23,6 +23,8 @@
         <activity android:name=".activity.recycler.RecyclerTestActivity" />
 
         <activity android:name=".activity.fragment.FragmentTest1Activity" />
+        <activity android:name=".activity.fragment.NewsActivity" />
+        <activity android:name=".activity.fragment.NewsContentActivity" />
     </application>
 
 </manifest>
