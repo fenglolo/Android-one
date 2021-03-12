@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.fw.androidone.R;
+import com.fw.androidone.activity.broadcast.BroadcastMyActivity;
+import com.fw.androidone.activity.broadcast.BroadcastTestActivity;
 import com.fw.androidone.activity.fragment.FragmentTest1Activity;
 import com.fw.androidone.activity.fragment.NewsActivity;
 import com.fw.androidone.activity.recycler.RecyclerActivity;
@@ -50,6 +52,8 @@ public class SelectActivity extends BaseActivity {
             init1();
         } else if (type == 2) {
             init2();
+        } else if (type == 3) {
+            init3();
         }
     }
 
@@ -81,5 +85,12 @@ public class SelectActivity extends BaseActivity {
         list.add(select);
         Select select2 = new Select("Fragment", "实战：一个简易版的新闻应用", new NewsActivity());
         list.add(select2);
+    }
+
+    private void init3() {
+        Select select = new Select("全剧大喇叭-广播", "动态注册-监听网络变化的广播", new BroadcastTestActivity());
+        list.add(select);
+        Select select1 = new Select("全剧大喇叭-广播", "发送自定义的广播", new BroadcastMyActivity());
+        list.add(select1);
     }
 }

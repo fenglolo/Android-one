@@ -1,6 +1,7 @@
 package com.fw.androidone.base.activity;
 
 import android.os.Bundle;
+import android.view.Window;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,8 +20,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //设置默认隐藏标题栏
-        //this.requestWindowFeature(Window.FEATURE_NO_TITLE);//这个方法无效，当继承AppCompatActivity时，该方法无效；
-        if (getSupportActionBar() != null) {
+//        this.requestWindowFeature(Window.FEATURE_NO_TITLE);//当继承AppCompatActivity时，该方法无效；
+        if (getSupportActionBar() != null) {//当继承Activity时，该方法生效；
             getSupportActionBar().hide();
         }
 
