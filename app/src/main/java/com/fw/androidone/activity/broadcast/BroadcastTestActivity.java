@@ -57,13 +57,14 @@ public class BroadcastTestActivity extends BaseActivity {
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            @SuppressLint("ServiceCast") ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.ACCESSIBILITY_SERVICE);
-            NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
-            if (null != networkInfo && networkInfo.isAvailable()) {
-                Toast.makeText(BroadcastTestActivity.this, "has net", Toast.LENGTH_SHORT).show();
-            } else {
-                Toast.makeText(BroadcastTestActivity.this, "no net", Toast.LENGTH_SHORT).show();
-            }
+            Toast.makeText(BroadcastTestActivity.this, "has net", Toast.LENGTH_SHORT).show();
+//            @SuppressLint("ServiceCast") ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.ACCESSIBILITY_SERVICE);
+//            NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+//            if (null != networkInfo && networkInfo.isAvailable()) {
+//                Toast.makeText(BroadcastTestActivity.this, "has net", Toast.LENGTH_SHORT).show();
+//            } else {
+//                Toast.makeText(BroadcastTestActivity.this, "no net", Toast.LENGTH_SHORT).show();
+//            }
         }
     }
 }

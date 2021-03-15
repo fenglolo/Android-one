@@ -15,6 +15,5 @@ public class BootCompleteReceiver extends BroadcastReceiver {
         // TODO: This method is called when the BroadcastReceiver is receiving
         // an Intent broadcast.
         Toast.makeText(context, "Boot Complete", Toast.LENGTH_SHORT).show();
-        throw new UnsupportedOperationException("Not yet implemented");
     }
 }
