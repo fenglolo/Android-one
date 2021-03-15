@@ -9,6 +9,7 @@ import com.fw.androidone.R;
 import com.fw.androidone.activity.broadcast.BroadcastMyActivity;
 import com.fw.androidone.activity.broadcast.BroadcastTestActivity;
 import com.fw.androidone.activity.filepersistenec.FileTest1Activity;
+import com.fw.androidone.activity.filepersistenec.SharedTest2Activity;
 import com.fw.androidone.activity.fragment.FragmentTest1Activity;
 import com.fw.androidone.activity.fragment.NewsActivity;
 import com.fw.androidone.activity.recycler.RecyclerActivity;
@@ -100,5 +101,7 @@ public class SelectActivity extends BaseActivity {
     private void init4() {
         Select select = new Select("数据存储（持久化）", "文件存储", new FileTest1Activity());
         list.add(select);
+        Select select2 = new Select("数据存储（持久化）", "SharedPreference存储", new SharedTest2Activity());
+        list.add(select2);
     }
 }

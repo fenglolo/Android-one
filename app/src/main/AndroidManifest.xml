@@ -53,6 +53,7 @@
         <activity android:name=".activity.broadcast.BroadcastMyActivity" />
         <!-- file save -->
         <activity android:name=".activity.filepersistenec.FileTest1Activity" />
+        <activity android:name=".activity.filepersistenec.SharedTest2Activity" />
     </application>
 
 </manifest>
