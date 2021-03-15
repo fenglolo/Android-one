@@ -2,4 +2,5 @@
     <string name="app_name">AndroidOne</string>
     <string name="recyclerview">RecyclerView</string>
     <string name="recycyler_text">recycyler简单的聊天界面实现</string>
+    <string name="file_save">文件存储</string>
 </resources>

@@ -51,6 +51,8 @@
         <!-- Broadcast -->
         <activity android:name=".activity.broadcast.BroadcastTestActivity" />
         <activity android:name=".activity.broadcast.BroadcastMyActivity" />
+        <!-- file save -->
+        <activity android:name=".activity.filepersistenec.FileTest1Activity" />
     </application>
 
 </manifest>

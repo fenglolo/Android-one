@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.fw.androidone.R;
 import com.fw.androidone.activity.broadcast.BroadcastMyActivity;
 import com.fw.androidone.activity.broadcast.BroadcastTestActivity;
+import com.fw.androidone.activity.filepersistenec.FileTest1Activity;
 import com.fw.androidone.activity.fragment.FragmentTest1Activity;
 import com.fw.androidone.activity.fragment.NewsActivity;
 import com.fw.androidone.activity.recycler.RecyclerActivity;
@@ -54,6 +55,8 @@ public class SelectActivity extends BaseActivity {
             init2();
         } else if (type == 3) {
             init3();
+        } else if (type == 4) {
+            init4();
         }
     }
 
@@ -92,5 +95,10 @@ public class SelectActivity extends BaseActivity {
         list.add(select);
         Select select1 = new Select("全剧大喇叭-广播", "发送自定义的广播", new BroadcastMyActivity());
         list.add(select1);
+    }
+
+    private void init4() {
+        Select select = new Select("数据存储（持久化）", "文件存储", new FileTest1Activity());
+        list.add(select);
     }
 }
