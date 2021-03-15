@@ -31,11 +31,16 @@ public class BroadcastMyActivity extends BaseActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //发送自定义广播
+                //发送自定义-标准广播
                 Intent intent = new Intent("com.fw.androidone.broadcast.MY_BROADCAST");
                 intent.setComponent(new ComponentName("com.fw.androidone",
                         "com.fw.androidone.broadcast.MyBroadcastReceiver"));//参数一：包名 参数二：接收器路径
                 sendBroadcast(intent);
+                //发送自定义-有序广播
+//                Intent intent2 = new Intent("com.fw.androidone.broadcast.MY_BROADCAST");
+//                intent.setComponent(new ComponentName("com.fw.androidone",
+//                        "com.fw.androidone.broadcast.MyBroadcastReceiver"));//参数一：包名 参数二：接收器路径
+//                sendOrderedBroadcast(intent2,null);
             }
         });
     }
