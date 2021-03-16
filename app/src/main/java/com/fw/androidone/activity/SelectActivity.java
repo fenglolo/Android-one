@@ -12,6 +12,8 @@ import com.fw.androidone.activity.filepersistenec.FileTest1Activity;
 import com.fw.androidone.activity.filepersistenec.SharedTest2Activity;
 import com.fw.androidone.activity.fragment.FragmentTest1Activity;
 import com.fw.androidone.activity.fragment.NewsActivity;
+import com.fw.androidone.activity.login.LoginActivity;
+import com.fw.androidone.activity.login.LoginOutTestActivity;
 import com.fw.androidone.activity.recycler.RecyclerActivity;
 import com.fw.androidone.activity.recycler.RecyclerTestActivity;
 import com.fw.androidone.adapter.SelectAdapter;
@@ -58,6 +60,8 @@ public class SelectActivity extends BaseActivity {
             init3();
         } else if (type == 4) {
             init4();
+        } else if (type == 5) {
+            init5();
         }
     }
 
@@ -102,6 +106,13 @@ public class SelectActivity extends BaseActivity {
         Select select = new Select("数据存储（持久化）", "文件存储", new FileTest1Activity());
         list.add(select);
         Select select2 = new Select("数据存储（持久化）", "SharedPreference存储", new SharedTest2Activity());
+        list.add(select2);
+    }
+
+    private void init5() {
+        Select select = new Select("登录", "登录页面", new LoginActivity());
+        list.add(select);
+        Select select2 = new Select("登录", "测试强制下线（广播）", new LoginOutTestActivity());
         list.add(select2);
     }
 }

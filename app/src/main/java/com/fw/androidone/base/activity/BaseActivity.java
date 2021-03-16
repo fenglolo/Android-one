@@ -1,10 +1,18 @@
 package com.fw.androidone.base.activity;
 
+import android.app.AlertDialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
-import android.view.Window;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.fw.androidone.activity.login.LoginActivity;
+import com.fw.androidone.utils.ActivityCollector;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -15,6 +23,8 @@ import org.greenrobot.eventbus.Subscribe;
  * date : 2021/3/4 13:44
  */
 public abstract class BaseActivity extends AppCompatActivity {
+
+    private LoginoutReceiver loginoutReceiver;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,12 +46,30 @@ public abstract class BaseActivity extends AppCompatActivity {
         this.initView();
         this.initAction();
         this.initData();
+
+        ActivityCollector.addActivity(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loginoutReceiver = new LoginoutReceiver();
+        IntentFilter filter = new IntentFilter();
+        filter.addAction("com.fw.androidone.FORCE_LOGIN_OUT");
+        registerReceiver(loginoutReceiver, filter);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        unregisterReceiver(loginoutReceiver);
     }
 
     @Override
     protected void onDestroy() {
         //eventbus解注册
         EventBus.getDefault().unregister(this);
+        ActivityCollector.removeActivity(this);
         super.onDestroy();
     }
 
@@ -59,5 +87,24 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Subscribe
     public void onEvent(Object object) {
+    }
+
+    static class LoginoutReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setTitle("温馨提示");
+            builder.setMessage("您的账号已经在其他设备登录，请重新登录。");
+            builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    ActivityCollector.finishAll();//销毁所有activity
+                    Intent intent = new Intent(context, LoginActivity.class);
+                    context.startActivity(intent);
+                }
+            });
+            builder.show();
+        }
     }
 }

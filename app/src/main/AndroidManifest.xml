@@ -54,6 +54,9 @@
         <!-- file save -->
         <activity android:name=".activity.filepersistenec.FileTest1Activity" />
         <activity android:name=".activity.filepersistenec.SharedTest2Activity" />
+        <!-- login -->
+        <activity android:name=".activity.login.LoginActivity" />
+        <activity android:name=".activity.login.LoginOutTestActivity" />
     </application>
 
 </manifest>
