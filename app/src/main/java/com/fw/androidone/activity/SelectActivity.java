@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.fw.androidone.R;
 import com.fw.androidone.activity.broadcast.BroadcastMyActivity;
 import com.fw.androidone.activity.broadcast.BroadcastTestActivity;
+import com.fw.androidone.activity.filepersistenec.DbActivity;
 import com.fw.androidone.activity.filepersistenec.FileTest1Activity;
 import com.fw.androidone.activity.filepersistenec.SharedTest2Activity;
 import com.fw.androidone.activity.fragment.FragmentTest1Activity;
@@ -107,6 +108,8 @@ public class SelectActivity extends BaseActivity {
         list.add(select);
         Select select2 = new Select("数据存储（持久化）", "SharedPreference存储", new SharedTest2Activity());
         list.add(select2);
+        Select select3 = new Select("数据存储（持久化）", "数据库操作", new DbActivity());
+        list.add(select3);
     }
 
     private void init5() {
