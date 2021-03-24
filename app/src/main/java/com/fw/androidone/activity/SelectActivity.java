@@ -16,6 +16,7 @@ import com.fw.androidone.activity.fragment.FragmentTest1Activity;
 import com.fw.androidone.activity.fragment.NewsActivity;
 import com.fw.androidone.activity.login.LoginActivity;
 import com.fw.androidone.activity.login.LoginOutTestActivity;
+import com.fw.androidone.activity.permission.PermissonActivity;
 import com.fw.androidone.activity.recycler.RecyclerActivity;
 import com.fw.androidone.activity.recycler.RecyclerTestActivity;
 import com.fw.androidone.adapter.SelectAdapter;
@@ -64,6 +65,8 @@ public class SelectActivity extends BaseActivity {
             init4();
         } else if (type == 5) {
             init5();
+        } else if (type == 6) {
+            init6();
         }
     }
 
@@ -120,5 +123,10 @@ public class SelectActivity extends BaseActivity {
         list.add(select);
         Select select2 = new Select("登录", "测试强制下线（广播）", new LoginOutTestActivity());
         list.add(select2);
+    }
+
+    private void init6() {
+        Select select = new Select("动态权限申请", "动态申请打电话权限", new PermissonActivity());
+        list.add(select);
     }
 }
