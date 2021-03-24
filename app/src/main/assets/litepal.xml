@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <!--数据库名-->
+    <dbname values="BookStore" />
+    <!--数据库版本号-->
+    <!--由于Book表新增字段、又新建CateGory表，故需要把数据库版本升级到2-->
+    <version values="2" />
+    <!--映射模型-->
+    <list>
+        <mapping class="com.fw.androidone.sqlitelitepal.entity.Book" />
+        <mapping class="com.fw.androidone.sqlitelitepal.entity.CateGory" />
+    </list>
+</litepal>

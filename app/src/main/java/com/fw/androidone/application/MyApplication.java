@@ -5,6 +5,8 @@ import android.content.Context;
 
 import androidx.multidex.MultiDex;
 
+import org.litepal.LitePal;
+
 /**
  * description :
  * author : apple
@@ -16,5 +18,12 @@ public class MyApplication extends Application {
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
         MultiDex.install(this);
+    }
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        //数据库初始化
+        LitePal.initialize(this);
     }
 }

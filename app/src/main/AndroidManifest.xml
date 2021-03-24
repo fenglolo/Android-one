@@ -55,6 +55,7 @@
         <activity android:name=".activity.filepersistenec.FileTest1Activity" />
         <activity android:name=".activity.filepersistenec.SharedTest2Activity" />
         <activity android:name=".activity.filepersistenec.DbActivity" />
+        <activity android:name=".activity.filepersistenec.DbLitepalActivity" />
         <!-- login -->
         <activity android:name=".activity.login.LoginActivity" />
         <activity android:name=".activity.login.LoginOutTestActivity" />
