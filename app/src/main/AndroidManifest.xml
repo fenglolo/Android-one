@@ -20,6 +20,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidOne">
+        <!-- 注册自定义content provider -->
+        <provider
+            android:name=".contentprovider.MyContentProvider"
+            android:authorities="com.fw.androidone.provider"
+            android:enabled="true"
+            android:exported="true" />
+        <!-- 注册自定义content provider -->
+        <provider
+            android:name=".contentprovider.DatabaseContentProvider"
+            android:authorities="com.fw.androidone.provider"
+            android:enabled="true"
+            android:exported="true" />
+
         <!-- 注册自定义广播 -->
         <receiver
             android:name=".broadcast.MyBroadcastReceiver"
