@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.fw.androidone.R;
 import com.fw.androidone.activity.broadcast.BroadcastMyActivity;
 import com.fw.androidone.activity.broadcast.BroadcastTestActivity;
+import com.fw.androidone.activity.contentprovider.ContentProviderGetLocalPhoneNumActivity;
+import com.fw.androidone.activity.contentprovider.ContentProviderTextActivity;
 import com.fw.androidone.activity.filepersistenec.DbActivity;
 import com.fw.androidone.activity.filepersistenec.DbLitepalActivity;
 import com.fw.androidone.activity.filepersistenec.FileTest1Activity;
@@ -67,6 +69,8 @@ public class SelectActivity extends BaseActivity {
             init5();
         } else if (type == 6) {
             init6();
+        } else if (type == 7) {
+            init7();
         }
     }
 
@@ -128,5 +132,12 @@ public class SelectActivity extends BaseActivity {
     private void init6() {
         Select select = new Select("动态权限申请", "动态申请打电话权限", new PermissonActivity());
         list.add(select);
+    }
+
+    private void init7() {
+        Select select = new Select("内容提供器content provider", "getContentResolver从content provider中获取数据", new ContentProviderTextActivity());
+        list.add(select);
+        Select select2 = new Select("内容提供器content provider", "获取手机联系人", new ContentProviderGetLocalPhoneNumActivity());
+        list.add(select2);
     }
 }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="20dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="Content Provider" />
+
+    <Button
+        android:id="@+id/btn_cp_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="cp添加数据" />
+
+    <Button
+        android:id="@+id/btn_cp_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="cp更新数据" />
+
+    <Button
+        android:id="@+id/btn_cp_delete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="cp删除数据" />
+
+    <Button
+        android:id="@+id/btn_cp_query"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="cp查询数据" />
+
+</LinearLayout>
