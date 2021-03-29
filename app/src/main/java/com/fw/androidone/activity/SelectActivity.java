@@ -20,6 +20,7 @@ import com.fw.androidone.activity.login.LoginActivity;
 import com.fw.androidone.activity.login.LoginOutTestActivity;
 import com.fw.androidone.activity.notification.NotificationActivity;
 import com.fw.androidone.activity.permission.PermissonActivity;
+import com.fw.androidone.activity.photo.TakePhotoActivity;
 import com.fw.androidone.activity.recycler.RecyclerActivity;
 import com.fw.androidone.activity.recycler.RecyclerTestActivity;
 import com.fw.androidone.adapter.SelectAdapter;
@@ -74,6 +75,8 @@ public class SelectActivity extends BaseActivity {
             init7();
         } else if (type == 8) {
             init8();
+        } else if (type == 9) {
+            init9();
         }
     }
 
@@ -146,6 +149,11 @@ public class SelectActivity extends BaseActivity {
 
     private void init8() {
         Select select = new Select("通知Notification", "测试通知", new NotificationActivity());
+        list.add(select);
+    }
+
+    private void init9() {
+        Select select = new Select("调用摄像头和相册", "调用摄像头", new TakePhotoActivity());
         list.add(select);
     }
 }

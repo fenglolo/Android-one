@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.fw.androidone">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!-- 网络变化权限 -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <!-- 监听系统开机广播权限 -->
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-    <!-- 打电话，需要动态申请 -->
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <!-- 读取手机联系人 -->
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <!-- 手机振动 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 网络变化权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 监听系统开机广播权限 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> <!-- 打电话，需要动态申请 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" /> <!-- 读取手机联系人 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" /> <!-- 手机振动 -->
     <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
 
     <application
         android:name=".application.MyApplication"
@@ -22,6 +21,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidOne">
+
+        <!-- FileProvider -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.fw.androidone.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
         <!-- 注册自定义content provider -->
         <provider
             android:name=".contentprovider.MyContentProvider"
@@ -88,6 +99,8 @@
         <!-- 通知 -->
         <activity android:name=".activity.notification.NotificationActivity" />
         <activity android:name=".activity.notification.NotificationtestActivity" />
+        <!-- 调用摄像头和相册 -->
+        <activity android:name=".activity.photo.TakePhotoActivity" />
     </application>
 
 </manifest>
