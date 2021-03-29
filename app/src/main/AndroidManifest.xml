@@ -11,6 +11,8 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <!-- 读取手机联系人 -->
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- 手机振动 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
         android:name=".application.MyApplication"
@@ -83,6 +85,9 @@
         <!-- content provider -->
         <activity android:name=".activity.contentprovider.ContentProviderTextActivity" />
         <activity android:name=".activity.contentprovider.ContentProviderGetLocalPhoneNumActivity" />
+        <!-- 通知 -->
+        <activity android:name=".activity.notification.NotificationActivity" />
+        <activity android:name=".activity.notification.NotificationtestActivity" />
     </application>
 
 </manifest>

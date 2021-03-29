@@ -18,6 +18,7 @@ import com.fw.androidone.activity.fragment.FragmentTest1Activity;
 import com.fw.androidone.activity.fragment.NewsActivity;
 import com.fw.androidone.activity.login.LoginActivity;
 import com.fw.androidone.activity.login.LoginOutTestActivity;
+import com.fw.androidone.activity.notification.NotificationActivity;
 import com.fw.androidone.activity.permission.PermissonActivity;
 import com.fw.androidone.activity.recycler.RecyclerActivity;
 import com.fw.androidone.activity.recycler.RecyclerTestActivity;
@@ -71,6 +72,8 @@ public class SelectActivity extends BaseActivity {
             init6();
         } else if (type == 7) {
             init7();
+        } else if (type == 8) {
+            init8();
         }
     }
 
@@ -139,5 +142,10 @@ public class SelectActivity extends BaseActivity {
         list.add(select);
         Select select2 = new Select("内容提供器content provider", "获取手机联系人", new ContentProviderGetLocalPhoneNumActivity());
         list.add(select2);
+    }
+
+    private void init8() {
+        Select select = new Select("通知Notification", "测试通知", new NotificationActivity());
+        list.add(select);
     }
 }

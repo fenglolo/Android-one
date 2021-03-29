@@ -44,6 +44,13 @@ public class MainActivity extends BaseActivity {
     }
 
     private void init() {
-        data = new String[]{"UI开发", "Fragment", "全剧大喇叭-广播", "数据存储（持久化）", "登录", "动态权限申请","内容提供器content provider"};
+        data = new String[]{"UI开发",
+                "Fragment",
+                "全剧大喇叭-广播",
+                "数据存储（持久化）",
+                "登录",
+                "动态权限申请",
+                "内容提供器content provider",
+                "通知Notification"};
     }
 }
