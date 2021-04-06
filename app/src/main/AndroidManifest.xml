@@ -101,6 +101,7 @@
         <activity android:name=".activity.notification.NotificationtestActivity" />
         <!-- 调用摄像头和相册 -->
         <activity android:name=".activity.photo.TakePhotoActivity" />
+        <activity android:name=".activity.photo.OpenCameraActivity"/>
     </application>
 
 </manifest>

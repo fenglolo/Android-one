@@ -20,6 +20,7 @@ import com.fw.androidone.activity.login.LoginActivity;
 import com.fw.androidone.activity.login.LoginOutTestActivity;
 import com.fw.androidone.activity.notification.NotificationActivity;
 import com.fw.androidone.activity.permission.PermissonActivity;
+import com.fw.androidone.activity.photo.OpenCameraActivity;
 import com.fw.androidone.activity.photo.TakePhotoActivity;
 import com.fw.androidone.activity.recycler.RecyclerActivity;
 import com.fw.androidone.activity.recycler.RecyclerTestActivity;
@@ -155,5 +156,7 @@ public class SelectActivity extends BaseActivity {
     private void init9() {
         Select select = new Select("调用摄像头和相册", "调用摄像头", new TakePhotoActivity());
         list.add(select);
+        Select select2 = new Select("调用摄像头和相册", "打开相册", new OpenCameraActivity());
+        list.add(select2);
     }
 }
