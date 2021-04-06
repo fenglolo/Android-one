@@ -52,6 +52,7 @@ public class MainActivity extends BaseActivity {
                 "动态权限申请",
                 "内容提供器content provider",
                 "通知Notification",
-                "调用摄像头和相册"};
+                "调用摄像头和相册",
+                "播放多媒体文件"};
     }
 }

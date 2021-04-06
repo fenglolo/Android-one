@@ -19,6 +19,8 @@ import com.fw.androidone.activity.fragment.NewsActivity;
 import com.fw.androidone.activity.login.LoginActivity;
 import com.fw.androidone.activity.login.LoginOutTestActivity;
 import com.fw.androidone.activity.notification.NotificationActivity;
+import com.fw.androidone.activity.paly.PlayAudioActivity;
+import com.fw.androidone.activity.paly.PlayVideoActivity;
 import com.fw.androidone.activity.permission.PermissonActivity;
 import com.fw.androidone.activity.photo.OpenCameraActivity;
 import com.fw.androidone.activity.photo.TakePhotoActivity;
@@ -78,6 +80,8 @@ public class SelectActivity extends BaseActivity {
             init8();
         } else if (type == 9) {
             init9();
+        } else if (type == 10) {
+            init10();
         }
     }
 
@@ -157,6 +161,13 @@ public class SelectActivity extends BaseActivity {
         Select select = new Select("调用摄像头和相册", "调用摄像头", new TakePhotoActivity());
         list.add(select);
         Select select2 = new Select("调用摄像头和相册", "打开相册", new OpenCameraActivity());
+        list.add(select2);
+    }
+
+    private void init10() {
+        Select select = new Select("播放多媒体文件", "播放音频", new PlayAudioActivity());
+        list.add(select);
+        Select select2 = new Select("播放多媒体文件", "播放视频", new PlayVideoActivity());
         list.add(select2);
     }
 }
