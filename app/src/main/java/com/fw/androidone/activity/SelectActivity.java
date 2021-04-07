@@ -18,6 +18,8 @@ import com.fw.androidone.activity.fragment.FragmentTest1Activity;
 import com.fw.androidone.activity.fragment.NewsActivity;
 import com.fw.androidone.activity.login.LoginActivity;
 import com.fw.androidone.activity.login.LoginOutTestActivity;
+import com.fw.androidone.activity.network.HttpUrlConnectionActivity;
+import com.fw.androidone.activity.network.OkHttpActivity;
 import com.fw.androidone.activity.notification.NotificationActivity;
 import com.fw.androidone.activity.paly.PlayAudioActivity;
 import com.fw.androidone.activity.paly.PlayVideoActivity;
@@ -26,6 +28,7 @@ import com.fw.androidone.activity.photo.OpenCameraActivity;
 import com.fw.androidone.activity.photo.TakePhotoActivity;
 import com.fw.androidone.activity.recycler.RecyclerActivity;
 import com.fw.androidone.activity.recycler.RecyclerTestActivity;
+import com.fw.androidone.activity.webview.WebviewActivity;
 import com.fw.androidone.adapter.SelectAdapter;
 import com.fw.androidone.base.activity.BaseActivity;
 import com.fw.androidone.entity.Select;
@@ -82,6 +85,8 @@ public class SelectActivity extends BaseActivity {
             init9();
         } else if (type == 10) {
             init10();
+        } else if (type == 11) {
+            init11();
         }
     }
 
@@ -169,5 +174,14 @@ public class SelectActivity extends BaseActivity {
         list.add(select);
         Select select2 = new Select("播放多媒体文件", "播放视频", new PlayVideoActivity());
         list.add(select2);
+    }
+
+    private void init11() {
+        Select select = new Select("使用网络技术", "webview", new WebviewActivity());
+        list.add(select);
+        Select select2 = new Select("使用网络技术", "HttpUrlConnection", new HttpUrlConnectionActivity());
+        list.add(select2);
+        Select select3 = new Select("使用网络技术", "OkHttp", new OkHttpActivity());
+        list.add(select3);
     }
 }

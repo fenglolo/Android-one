@@ -105,6 +105,10 @@
         <!-- 播放多媒体文件 -->
         <activity android:name=".activity.paly.PlayAudioActivity" />
         <activity android:name=".activity.paly.PlayVideoActivity" />
+        <!-- webview -->
+        <activity android:name=".activity.webview.WebviewActivity" />
+        <activity android:name=".activity.network.HttpUrlConnectionActivity" />
+        <activity android:name=".activity.network.OkHttpActivity" />
     </application>
 
 </manifest>
