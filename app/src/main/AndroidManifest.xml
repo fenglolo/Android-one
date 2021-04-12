@@ -109,6 +109,8 @@
         <activity android:name=".activity.webview.WebviewActivity" />
         <activity android:name=".activity.network.HttpUrlConnectionActivity" />
         <activity android:name=".activity.network.OkHttpActivity" />
+        <!-- thread -->
+        <activity android:name=".activity.thread.AndroidThreadActivity" />
     </application>
 
 </manifest>

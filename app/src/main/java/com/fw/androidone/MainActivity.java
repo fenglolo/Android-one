@@ -54,6 +54,7 @@ public class MainActivity extends BaseActivity {
                 "通知Notification",
                 "调用摄像头和相册",
                 "播放多媒体文件",
-                "使用网络技术"};
+                "使用网络技术",
+                "服务"};
     }
 }

@@ -28,6 +28,7 @@ import com.fw.androidone.activity.photo.OpenCameraActivity;
 import com.fw.androidone.activity.photo.TakePhotoActivity;
 import com.fw.androidone.activity.recycler.RecyclerActivity;
 import com.fw.androidone.activity.recycler.RecyclerTestActivity;
+import com.fw.androidone.activity.thread.AndroidThreadActivity;
 import com.fw.androidone.activity.webview.WebviewActivity;
 import com.fw.androidone.adapter.SelectAdapter;
 import com.fw.androidone.base.activity.BaseActivity;
@@ -87,6 +88,8 @@ public class SelectActivity extends BaseActivity {
             init10();
         } else if (type == 11) {
             init11();
+        } else if (type == 12) {
+            init12();
         }
     }
 
@@ -183,5 +186,10 @@ public class SelectActivity extends BaseActivity {
         list.add(select2);
         Select select3 = new Select("使用网络技术", "OkHttp", new OkHttpActivity());
         list.add(select3);
+    }
+
+    private void init12() {
+        Select select = new Select("服务", "在子线程中更新UI", new AndroidThreadActivity());
+        list.add(select);
     }
 }
