@@ -21,7 +21,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidOne">
-
+        <!-- 注册自定义service -->
+        <service
+            android:name=".service.MyService"
+            android:enabled="true"
+            android:exported="true"></service>
         <!-- FileProvider -->
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -31,22 +35,17 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
-        </provider>
-
-        <!-- 注册自定义content provider -->
+        </provider> <!-- 注册自定义content provider -->
         <provider
             android:name=".contentprovider.MyContentProvider"
             android:authorities="com.fw.androidone.provider"
             android:enabled="true"
-            android:exported="true" />
-        <!-- 注册自定义content provider -->
+            android:exported="true" /> <!-- 注册自定义content provider -->
         <provider
             android:name=".contentprovider.DatabaseContentProvider"
             android:authorities="com.fw.androidone.provider"
             android:enabled="true"
-            android:exported="true" />
-
-        <!-- 注册自定义广播 -->
+            android:exported="true" /> <!-- 注册自定义广播 -->
         <receiver
             android:name=".broadcast.MyBroadcastReceiver"
             android:enabled="true"
@@ -54,8 +53,7 @@
             <intent-filter>
                 <action android:name="com.fw.androidone.broadcast.MY_BROADCAST" />
             </intent-filter>
-        </receiver>
-        <!-- 静态注册的监听系统开机的广播 -->
+        </receiver> <!-- 静态注册的监听系统开机的广播 -->
         <receiver
             android:name=".broadcast.BootCompleteReceiver"
             android:enabled="true"
@@ -72,45 +70,34 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.SelectActivity" />
-        <!-- RecyclerView -->
+        <activity android:name=".activity.SelectActivity" /> <!-- RecyclerView -->
         <activity android:name=".activity.recycler.RecyclerActivity" />
-        <activity android:name=".activity.recycler.RecyclerTestActivity" />
-        <!-- Fragment -->
+        <activity android:name=".activity.recycler.RecyclerTestActivity" /> <!-- Fragment -->
         <activity android:name=".activity.fragment.FragmentTest1Activity" />
         <activity android:name=".activity.fragment.NewsActivity" />
-        <activity android:name=".activity.fragment.NewsContentActivity" />
-        <!-- Broadcast -->
+        <activity android:name=".activity.fragment.NewsContentActivity" /> <!-- Broadcast -->
         <activity android:name=".activity.broadcast.BroadcastTestActivity" />
-        <activity android:name=".activity.broadcast.BroadcastMyActivity" />
-        <!-- file save -->
+        <activity android:name=".activity.broadcast.BroadcastMyActivity" /> <!-- file save -->
         <activity android:name=".activity.filepersistenec.FileTest1Activity" />
         <activity android:name=".activity.filepersistenec.SharedTest2Activity" />
         <activity android:name=".activity.filepersistenec.DbActivity" />
-        <activity android:name=".activity.filepersistenec.DbLitepalActivity" />
-        <!-- login -->
+        <activity android:name=".activity.filepersistenec.DbLitepalActivity" /> <!-- login -->
         <activity android:name=".activity.login.LoginActivity" />
-        <activity android:name=".activity.login.LoginOutTestActivity" />
-        <!-- permission -->
-        <activity android:name=".activity.permission.PermissonActivity" />
-        <!-- content provider -->
+        <activity android:name=".activity.login.LoginOutTestActivity" /> <!-- permission -->
+        <activity android:name=".activity.permission.PermissonActivity" /> <!-- content provider -->
         <activity android:name=".activity.contentprovider.ContentProviderTextActivity" />
-        <activity android:name=".activity.contentprovider.ContentProviderGetLocalPhoneNumActivity" />
-        <!-- 通知 -->
+        <activity android:name=".activity.contentprovider.ContentProviderGetLocalPhoneNumActivity" /> <!-- 通知 -->
         <activity android:name=".activity.notification.NotificationActivity" />
-        <activity android:name=".activity.notification.NotificationtestActivity" />
-        <!-- 调用摄像头和相册 -->
+        <activity android:name=".activity.notification.NotificationtestActivity" /> <!-- 调用摄像头和相册 -->
         <activity android:name=".activity.photo.TakePhotoActivity" />
-        <activity android:name=".activity.photo.OpenCameraActivity" />
-        <!-- 播放多媒体文件 -->
+        <activity android:name=".activity.photo.OpenCameraActivity" /> <!-- 播放多媒体文件 -->
         <activity android:name=".activity.paly.PlayAudioActivity" />
-        <activity android:name=".activity.paly.PlayVideoActivity" />
-        <!-- webview -->
+        <activity android:name=".activity.paly.PlayVideoActivity" /> <!-- webview -->
         <activity android:name=".activity.webview.WebviewActivity" />
         <activity android:name=".activity.network.HttpUrlConnectionActivity" />
-        <activity android:name=".activity.network.OkHttpActivity" />
-        <!-- thread -->
+        <activity android:name=".activity.network.OkHttpActivity" /> <!-- thread service-->
         <activity android:name=".activity.thread.AndroidThreadActivity" />
+        <activity android:name=".activity.service.ServiceTestActivity" />
     </application>
 
 </manifest>

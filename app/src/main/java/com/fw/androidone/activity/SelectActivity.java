@@ -28,6 +28,7 @@ import com.fw.androidone.activity.photo.OpenCameraActivity;
 import com.fw.androidone.activity.photo.TakePhotoActivity;
 import com.fw.androidone.activity.recycler.RecyclerActivity;
 import com.fw.androidone.activity.recycler.RecyclerTestActivity;
+import com.fw.androidone.activity.service.ServiceTestActivity;
 import com.fw.androidone.activity.thread.AndroidThreadActivity;
 import com.fw.androidone.activity.webview.WebviewActivity;
 import com.fw.androidone.adapter.SelectAdapter;
@@ -191,5 +192,7 @@ public class SelectActivity extends BaseActivity {
     private void init12() {
         Select select = new Select("服务", "在子线程中更新UI", new AndroidThreadActivity());
         list.add(select);
+        Select select2 = new Select("服务", "开启、关闭、绑定、解绑服务", new ServiceTestActivity());
+        list.add(select2);
     }
 }
