@@ -28,4 +28,10 @@
         android:layout_height="wrap_content"
         android:text="解绑服务" />
 
+    <Button
+        android:id="@+id/btn_start_intent_service"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="使用IntentService服务" />
+
 </LinearLayout>

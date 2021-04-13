@@ -21,12 +21,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidOne">
+        <!-- 注册自定义IntentService -->
+        <service android:name=".service.MyIntentService" />
         <!-- 注册自定义service -->
         <service
             android:name=".service.MyService"
             android:enabled="true"
-            android:exported="true"></service>
-        <!-- FileProvider -->
+            android:exported="true" /> <!-- FileProvider -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.fw.androidone.fileprovider"
@@ -95,7 +96,7 @@
         <activity android:name=".activity.paly.PlayVideoActivity" /> <!-- webview -->
         <activity android:name=".activity.webview.WebviewActivity" />
         <activity android:name=".activity.network.HttpUrlConnectionActivity" />
-        <activity android:name=".activity.network.OkHttpActivity" /> <!-- thread service-->
+        <activity android:name=".activity.network.OkHttpActivity" /> <!-- thread service -->
         <activity android:name=".activity.thread.AndroidThreadActivity" />
         <activity android:name=".activity.service.ServiceTestActivity" />
     </application>
