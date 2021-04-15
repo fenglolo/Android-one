@@ -26,6 +26,7 @@ public class MyIntentService extends IntentService {
     @Override
     public void onDestroy() {
         super.onDestroy();
+
         Log.d("MyIntentService", "MyIntentService---onDestroy");
     }
 }
