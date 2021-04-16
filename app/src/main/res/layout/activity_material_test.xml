@@ -20,13 +20,13 @@
     </FrameLayout>
 
     <!--侧滑菜单页：必须要设置layout_gravity属性-->
-    <TextView
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="#fff"
-        android:text="This is menu"
-        android:textSize="30sp" />
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_menu" />
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
