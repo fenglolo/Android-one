@@ -3,19 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/backup"
-        android:icon="@mipmap/menu_demo_barcode"
+        android:icon="@mipmap/icon_backup"
         android:title="Backup"
         app:showAsAction="always" />
 
     <item
         android:id="@+id/delete"
-        android:icon="@mipmap/menu_demo_dialog"
+        android:icon="@mipmap/icon_delete"
         android:title="Delete"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/setting"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/icon_setting"
         android:title="Setting"
         app:showAsAction="never" />
 </menu>
