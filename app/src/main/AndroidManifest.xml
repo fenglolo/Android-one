@@ -99,6 +99,10 @@
         <activity android:name=".activity.network.OkHttpActivity" /> <!-- thread service -->
         <activity android:name=".activity.thread.AndroidThreadActivity" />
         <activity android:name=".activity.service.ServiceTestActivity" />
+        <!-- material design -->
+        <activity
+            android:name=".activity.material.MaterialTestActivity"
+            android:label="Fruit" />
     </application>
 
 </manifest>

@@ -55,6 +55,7 @@ public class MainActivity extends BaseActivity {
                 "调用摄像头和相册",
                 "播放多媒体文件",
                 "使用网络技术",
-                "服务"};
+                "服务",
+                "UI-Material Design"};
     }
 }

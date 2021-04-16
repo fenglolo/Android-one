@@ -18,6 +18,7 @@ import com.fw.androidone.activity.fragment.FragmentTest1Activity;
 import com.fw.androidone.activity.fragment.NewsActivity;
 import com.fw.androidone.activity.login.LoginActivity;
 import com.fw.androidone.activity.login.LoginOutTestActivity;
+import com.fw.androidone.activity.material.MaterialTestActivity;
 import com.fw.androidone.activity.network.HttpUrlConnectionActivity;
 import com.fw.androidone.activity.network.OkHttpActivity;
 import com.fw.androidone.activity.notification.NotificationActivity;
@@ -91,6 +92,8 @@ public class SelectActivity extends BaseActivity {
             init11();
         } else if (type == 12) {
             init12();
+        } else if (type == 13) {
+            init13();
         }
     }
 
@@ -194,5 +197,10 @@ public class SelectActivity extends BaseActivity {
         list.add(select);
         Select select2 = new Select("服务", "开启、关闭、绑定、解绑服务", new ServiceTestActivity());
         list.add(select2);
+    }
+
+    private void init13() {
+        Select select = new Select("UI-Material Design", "Toolbar", new MaterialTestActivity());
+        list.add(select);
     }
 }
