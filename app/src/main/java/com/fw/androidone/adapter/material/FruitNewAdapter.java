@@ -1,6 +1,7 @@
 package com.fw.androidone.adapter.material;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,10 +9,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.fw.androidone.R;
+import com.fw.androidone.activity.material.MaterialFruitActivity;
 import com.fw.androidone.entity.material.Fruits;
 
 import java.util.ArrayList;
@@ -39,6 +42,17 @@ public class FruitNewAdapter extends RecyclerView.Adapter<FruitNewAdapter.ViewHo
         }
         View view = LayoutInflater.from(mContext).inflate(R.layout.item_fruit_material, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
+        viewHolder.cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int position = viewHolder.getAdapterPosition();
+                Fruits fruits = list.get(position);
+                Intent intent = new Intent(mContext, MaterialFruitActivity.class);
+                intent.putExtra(MaterialFruitActivity.FRUIT_NAME, fruits.getName());
+                intent.putExtra(MaterialFruitActivity.FRUIT_IMAGE_ID, fruits.getImgId());
+                mContext.startActivity(intent);
+            }
+        });
         return viewHolder;
     }
 
@@ -56,11 +70,13 @@ public class FruitNewAdapter extends RecyclerView.Adapter<FruitNewAdapter.ViewHo
 
     static class ViewHolder extends RecyclerView.ViewHolder {
 
+        CardView cardView;
         ImageView fruitImg;
         TextView fruitName;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
+            cardView = itemView.findViewById(R.id.card_view);
             fruitImg = itemView.findViewById(R.id.fruit_image);
             fruitName = itemView.findViewById(R.id.fruit_name);
         }

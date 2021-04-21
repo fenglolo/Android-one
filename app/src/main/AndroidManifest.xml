@@ -103,6 +103,9 @@
         <activity
             android:name=".activity.material.MaterialTestActivity"
             android:label="Fruit" />
+        <activity
+            android:name=".activity.material.MaterialFruitActivity"
+            android:theme="@style/MaterialFruitActivityTheme" />
     </application>
 
 </manifest>
