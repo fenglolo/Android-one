@@ -111,6 +111,11 @@ public class SelectActivity extends BaseActivity {
                 startActivity(new Intent(SelectActivity.this, select.getActivity().getClass()));
             }
         });
+        //使用Lambda表达式
+        adapter.setItemClickListener(position -> {
+            Select select = list.get(position);
+            startActivity(new Intent(SelectActivity.this, select.getActivity().getClass()));
+        });
     }
 
     private void init1() {

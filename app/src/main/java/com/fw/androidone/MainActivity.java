@@ -41,6 +41,13 @@ public class MainActivity extends BaseActivity {
                 startActivity(intent);
             }
         });
+
+        //使用Lambda表达式
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            Intent intent = new Intent(MainActivity.this, SelectActivity.class);
+            intent.putExtra("type", position + 1);
+            startActivity(intent);
+        });
     }
 
     private void init() {

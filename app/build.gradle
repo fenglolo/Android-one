@@ -13,8 +13,10 @@ android {
         versionCode 1
         versionName "1.0"
 
+        //配置分包
         multiDexEnabled true
 
+        //配置单元测试
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
