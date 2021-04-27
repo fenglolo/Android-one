@@ -14,6 +14,8 @@ import org.litepal.LitePal;
  */
 public class MyApplication extends Application {
 
+    public static Context context;
+
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
@@ -25,5 +27,10 @@ public class MyApplication extends Application {
         super.onCreate();
         //数据库初始化
         LitePal.initialize(this);
+        context = getApplicationContext();
+    }
+
+    public static Context getContext() {
+        return context;
     }
 }
