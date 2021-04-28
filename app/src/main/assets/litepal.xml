@@ -4,10 +4,17 @@
     <dbname values="BookStore" />
     <!--数据库版本号-->
     <!--由于Book表新增字段、又新建CateGory表，故需要把数据库版本升级到2-->
-    <version values="2" />
+    <!--由于新建了Province、City、County表，故需要把数据库版本升级到3-->
+    <version values="3" />
     <!--映射模型-->
     <list>
         <mapping class="com.fw.androidone.sqlitelitepal.entity.Book" />
         <mapping class="com.fw.androidone.sqlitelitepal.entity.CateGory" />
+
+        <!--因为一个项目中LitePal只能建一个数据库，而我们在之前的demo中已经
+        建了BookStore数据库，故直接在这个数据库中新增表即可。-->
+        <mapping class="com.fw.androidone.weather.db.Province" />
+        <mapping class="com.fw.androidone.weather.db.City" />
+        <mapping class="com.fw.androidone.weather.db.County" />
     </list>
 </litepal>
