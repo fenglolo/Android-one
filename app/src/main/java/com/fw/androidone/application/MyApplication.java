@@ -6,6 +6,7 @@ import android.content.Context;
 import androidx.multidex.MultiDex;
 
 import org.litepal.LitePal;
+import org.litepal.tablemanager.Connector;
 
 /**
  * description :
@@ -19,18 +20,27 @@ public class MyApplication extends Application {
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
+        //分包
         MultiDex.install(this);
     }
 
     @Override
     public void onCreate() {
         super.onCreate();
-        //数据库初始化
-        LitePal.initialize(this);
         context = getApplicationContext();
+        init();
     }
 
     public static Context getContext() {
         return context;
+    }
+
+    private void init() {
+        initLitePal();
+    }
+
+    private void initLitePal() {
+        //数据库初始化
+        LitePal.initialize(this);
     }
 }

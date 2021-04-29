@@ -35,6 +35,7 @@ import com.fw.androidone.activity.webview.WebviewActivity;
 import com.fw.androidone.adapter.SelectAdapter;
 import com.fw.androidone.base.activity.BaseActivity;
 import com.fw.androidone.entity.Select;
+import com.fw.androidone.weather.WeatherActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -94,6 +95,8 @@ public class SelectActivity extends BaseActivity {
             init12();
         } else if (type == 13) {
             init13();
+        } else if (type == 14) {
+            init14();
         }
     }
 
@@ -206,6 +209,11 @@ public class SelectActivity extends BaseActivity {
 
     private void init13() {
         Select select = new Select("UI-Material Design", "Toolbar", new MaterialTestActivity());
+        list.add(select);
+    }
+
+    private void init14() {
+        Select select = new Select("天气查询demo", "天气", new WeatherActivity());
         list.add(select);
     }
 }

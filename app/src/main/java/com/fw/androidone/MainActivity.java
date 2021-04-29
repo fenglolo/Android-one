@@ -63,6 +63,7 @@ public class MainActivity extends BaseActivity {
                 "播放多媒体文件",
                 "使用网络技术",
                 "服务",
-                "UI-Material Design"};
+                "UI-Material Design",
+                "天气查询demo"};
     }
 }

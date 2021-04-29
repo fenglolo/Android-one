@@ -131,7 +131,7 @@ public class DbLitepalActivity extends BaseActivity {
                         .find(Book.class);//查询Book表中第3～5条满足page>100页这个条件的name、author这两列数据，并且查询结果按照price升序排序
 
                 //LitePal使用原声SQL查询
-                Cursor cursor = LitePal.findBySQL("select * form Book where page > ? and price < ?", "100", "60");
+                Cursor cursor = LitePal.findBySQL("select * from Book where page > ? and price < ?", "100", "60");
             }
         });
     }
