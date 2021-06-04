@@ -5,6 +5,8 @@ import android.text.TextUtils;
 import com.fw.androidone.weather.db.City;
 import com.fw.androidone.weather.db.County;
 import com.fw.androidone.weather.db.Province;
+import com.fw.androidone.weather.gson.Weather;
+import com.google.gson.Gson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -94,5 +96,23 @@ public class Utility {
             }
         }
         return false;
+    }
+
+    /**
+     * 解析并返回的天气数据
+     *
+     * @param response response
+     * @return new Gson().fromJson(weatherContent, Weather.class)
+     */
+    public static Weather handleWeatherResponse(String response) {
+        try {
+            JSONObject jsonObject = new JSONObject(response);
+            JSONArray jsonArray = jsonObject.getJSONArray("HeWeather");
+            String weatherContent = jsonArray.getJSONObject(0).toString();
+            return new Gson().fromJson(weatherContent, Weather.class);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

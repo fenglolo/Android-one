@@ -1,6 +1,7 @@
 package com.fw.androidone.weather;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -89,6 +90,11 @@ public class ChooseAreaFragment extends Fragment {
             } else if (currentLevel == LEVEL_CITY) {
                 selectedCity = cityList.get(position);
                 queryCounty();
+            } else if (currentLevel == LEVEL_COUNTY) {
+                String weatherId = countyList.get(position).getWeatherId();
+                Intent intent = new Intent(getActivity(), WeatherShowActivity.class);
+                intent.putExtra("weather_id", weatherId);
+                startActivity(intent);
             }
         });
         backBtn.setOnClickListener((view) -> {

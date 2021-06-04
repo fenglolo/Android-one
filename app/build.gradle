@@ -44,6 +44,7 @@ configurations.all {
 }
 
 dependencies {
+    implementation(name:'Test_debug_2', ext:'aar')
 
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'com.google.android.material:material:1.2.1'
