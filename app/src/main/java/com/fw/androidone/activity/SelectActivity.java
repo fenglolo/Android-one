@@ -1,7 +1,11 @@
 package com.fw.androidone.activity;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.widget.Toast;
 
+import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -29,6 +33,7 @@ import com.fw.androidone.activity.photo.OpenCameraActivity;
 import com.fw.androidone.activity.photo.TakePhotoActivity;
 import com.fw.androidone.activity.recycler.RecyclerActivity;
 import com.fw.androidone.activity.recycler.RecyclerTestActivity;
+import com.fw.androidone.activity.scan.ScanActivity;
 import com.fw.androidone.activity.service.ServiceTestActivity;
 import com.fw.androidone.activity.thread.AndroidThreadActivity;
 import com.fw.androidone.activity.webview.WebviewActivity;
@@ -46,6 +51,7 @@ import java.util.List;
  * date : 2021/3/8 13:39
  */
 public class SelectActivity extends BaseActivity {
+    public static final int CAMERA_REQ_CODE = 0x01;
 
     private RecyclerView recyclerView;
     private LinearLayoutManager manager;
@@ -97,6 +103,8 @@ public class SelectActivity extends BaseActivity {
             init13();
         } else if (type == 14) {
             init14();
+        } else if (type == 15) {
+            init15();
         }
     }
 
@@ -111,7 +119,13 @@ public class SelectActivity extends BaseActivity {
             @Override
             public void onClick(int position) {
                 Select select = list.get(position);
-                startActivity(new Intent(SelectActivity.this, select.getActivity().getClass()));
+                if (select.getActivity().getClass().equals(ScanActivity.class)) {
+                    //CAMERA_REQ_CODE为用户自定义，用于接收权限校验结果
+                    ActivityCompat.requestPermissions(SelectActivity.this, new String[]{Manifest.permission.CAMERA,
+                            Manifest.permission.READ_EXTERNAL_STORAGE}, CAMERA_REQ_CODE);
+                } else {
+                    startActivity(new Intent(SelectActivity.this, select.getActivity().getClass()));
+                }
             }
         });
         //使用Lambda表达式
@@ -215,5 +229,22 @@ public class SelectActivity extends BaseActivity {
     private void init14() {
         Select select = new Select("天气查询demo", "天气", new WeatherActivity());
         list.add(select);
+    }
+
+    private void init15() {
+        Select select = new Select("华为Scan扫码", "扫一扫", new ScanActivity());
+        list.add(select);
+    }
+
+    //实现“onRequestPermissionsResult”函数接收校验权限结果
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        //判断“requestCode”是否为申请权限时设置请求码CAMERA_REQ_CODE，然后校验权限开启状态
+        if (requestCode == CAMERA_REQ_CODE && grantResults.length == 2 && grantResults[0] == PackageManager.PERMISSION_GRANTED && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
+            //调用扫码接口，构建扫码能力，需您实现
+            startActivity(new Intent(SelectActivity.this, ScanActivity.class));
+        } else {
+            Toast.makeText(SelectActivity.this, "未授权", Toast.LENGTH_SHORT).show();
+        }
     }
 }

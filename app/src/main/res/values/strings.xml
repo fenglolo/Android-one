@@ -3,4 +3,8 @@
     <string name="recyclerview">RecyclerView</string>
     <string name="recycyler_text">recycyler简单的聊天界面实现</string>
     <string name="file_save">文件存储</string>
+
+    <string name="scan_permission_rationale">扫一扫需要相机权限，请您允许或打开设置修改应用程序的权限。</string>
+    <string name="scan_tip">将码放入取景框，即可自动扫描</string>
+    <string name="scan_title">扫码</string>
 </resources>

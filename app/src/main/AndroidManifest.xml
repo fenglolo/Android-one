@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.fw.androidone">
 
+    <!--相机权限-->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!--读文件权限-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <uses-permission android:name="android.permission.INTERNET" /> <!-- 网络变化权限 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- 监听系统开机广播权限 -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /> <!-- 打电话，需要动态申请 -->
@@ -112,6 +117,8 @@
             android:name=".weather.WeatherActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".weather.WeatherShowActivity" />
+        <!--scan扫码-->
+        <activity android:name=".activity.scan.ScanActivity" />
     </application>
 
 </manifest>
