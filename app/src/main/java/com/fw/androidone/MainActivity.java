@@ -65,6 +65,7 @@ public class MainActivity extends BaseActivity {
                 "服务",
                 "UI-Material Design",
                 "天气查询demo",
-                "华为Scan扫码demo"};
+                "华为Scan扫码demo",
+                "自定义View"};
     }
 }

@@ -119,6 +119,10 @@
         <activity android:name=".weather.WeatherShowActivity" />
         <!--scan扫码-->
         <activity android:name=".activity.scan.ScanActivity" />
+        <!--自定义view-->
+        <activity android:name=".activity.designview.activity.DesignViewActivity1" />
+        <activity android:name=".activity.designview.activity.DesignViewActivity2" />
+        <activity android:name=".activity.designview.activity.DesignViewActivity3" />
     </application>
 
 </manifest>

@@ -14,6 +14,9 @@ import com.fw.androidone.activity.broadcast.BroadcastMyActivity;
 import com.fw.androidone.activity.broadcast.BroadcastTestActivity;
 import com.fw.androidone.activity.contentprovider.ContentProviderGetLocalPhoneNumActivity;
 import com.fw.androidone.activity.contentprovider.ContentProviderTextActivity;
+import com.fw.androidone.activity.designview.activity.DesignViewActivity1;
+import com.fw.androidone.activity.designview.activity.DesignViewActivity2;
+import com.fw.androidone.activity.designview.activity.DesignViewActivity3;
 import com.fw.androidone.activity.filepersistenec.DbActivity;
 import com.fw.androidone.activity.filepersistenec.DbLitepalActivity;
 import com.fw.androidone.activity.filepersistenec.FileTest1Activity;
@@ -105,6 +108,8 @@ public class SelectActivity extends BaseActivity {
             init14();
         } else if (type == 15) {
             init15();
+        }else if (type == 16) {
+            init16();
         }
     }
 
@@ -234,6 +239,15 @@ public class SelectActivity extends BaseActivity {
     private void init15() {
         Select select = new Select("华为Scan扫码", "扫一扫", new ScanActivity());
         list.add(select);
+    }
+
+    private void init16() {
+        Select select = new Select("自定义View", "自定义View学习(一)——准备", new DesignViewActivity1());
+        list.add(select);
+        Select select2 = new Select("自定义View", "自定义View学习(二)——开始了解Canvas和Paint", new DesignViewActivity2());
+        list.add(select2);
+        Select select3 = new Select("自定义View", "自定义View学习(三)——Paint 绘制文字属性", new DesignViewActivity3());
+        list.add(select3);
     }
 
     //实现“onRequestPermissionsResult”函数接收校验权限结果
