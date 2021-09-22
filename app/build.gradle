@@ -84,7 +84,16 @@ dependencies {
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
 
     //android单元测试
+    //junit
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    //mockito
+    testImplementation "org.mockito:mockito-core:2.8.9"
+    //powermock
+    testCompile "org.powermock:powermock-module-junit4:1.7.3"
+    testCompile "org.powermock:powermock-module-junit4-rule:1.7.3"
+    testCompile "org.powermock:powermock-api-mockito2:1.7.3" //注意这里是mockito2
+    testCompile "org.powermock:powermock-classloading-xstream:1.7.3"
+
 }
